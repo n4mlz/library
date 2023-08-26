@@ -33,6 +33,8 @@
 
 - bisect_leftまたはbosect_rightで値のindexを検索できる O(log n)
 - [めぐる式](https://qiita.com/drken/items/97e37dd6143e33a64c8c)
+- 答えで二分探索
+    - 「最小値の最大化問題」など
 
 ## dp
 
