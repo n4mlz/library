@@ -1,27 +1,24 @@
 # this code is incomplete as template.
+n, m = [int(x) for x in input().split()]
+g = [[] for _ in range(n)]
+
+for _ in range(m):
+    st, gl, ds = [int(x) for x in input().split()]
+    g[st].append([ds, gl])
+    g[gl].append([ds, st])
 
 import heapq
-
-g = [[] for _ in range(16)]
-for _ in range(24):
-    _s, _g, _d = map(int, input().split())
-    g[_s].append([_d, _g])
-    g[_g].append([_d, _s])
-
-def dijkstra():
-    d = [10**10] * 16
-    d[0] = 0
-    q = [[0, 0]]
+def dijkstra(u):
+    distances = [10**10] * n
+    distances[u] = 0
+    q = [[0, u]]
     while q:
         n_d, n_v = heapq.heappop(q)
-        if n_d > d[n_v]:
+        if n_d > distances[n_v]:
             continue
         for v in g[n_v]:
-            tmp = n_d + v[0]
-            if d[v[1]] > tmp:
-                d[v[1]] = tmp
-                heapq.heappush(q, [tmp, v[1]])
-    return d
-
-ans = dijkstra()
-print(f'ans:{ans[15]}')
+            d_tmp = n_d + v[0]
+            if distances[v[1]] > d_tmp:
+                distances[v[1]] = d_tmp
+                heapq.heappush(q, [d_tmp, v[1]])
+    return distances
