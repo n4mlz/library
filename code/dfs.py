@@ -15,6 +15,7 @@ for _ in range(m):
 
 used = [False] * n
 ans = 0
+# sはパスの長さ
 def dfs(v, s):
     global used, ans
     used[v] = True
