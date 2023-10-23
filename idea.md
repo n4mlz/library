@@ -83,6 +83,7 @@
 
 - bfsでの実装とdfsでの実装がある
 - 有向グラフの閉路の検出(DAGかどうかの検出)ができる
+- 操作が矛盾しない順序かどうかの判定など
 - [参考](https://algo-logic.info/topological-sort/)
 
 ## マッチング
